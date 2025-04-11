@@ -1,0 +1,35 @@
+.bannerContainer {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  padding: 0; /* Removed vertical padding */
+  margin: 0; /* Removed margin */
+  background: linear-gradient(90deg, #f8f9fa, #e9ecef);
+}
+
+.scrollingText {
+  display: inline-block;
+  animation: scroll 20s linear infinite;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333; /* Changed from white to dark color for better contrast */
+  padding: 1rem 20px; /* Moved padding here from container */
+}
+
+.scrollingText:hover {
+  animation-play-state: paused;
+  cursor: default;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .scrollingText {
+    font-size: 1.2rem;
+    padding: 0.8rem 20px; /* Adjusted for mobile */
+  }
+}

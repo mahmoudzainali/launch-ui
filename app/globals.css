@@ -5,6 +5,23 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@layer base {
+  /* Remove default spacing between sections */
+  section {
+    @apply w-full p-0 m-0;
+  }
+
+  /* Make all direct children of sections fit perfectly */
+  section > * {
+    @apply w-full max-w-none;
+  }
+
+  /* Edge-to-edge utility */
+  .edge-to-edge {
+    @apply w-full p-0 m-0 max-w-none;
+  }
+}
+
 @theme inline {
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
@@ -52,8 +69,13 @@
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
 
-  --spacing-container: 1280px;
-  --spacing-container-lg: 1536px;
+  /* Modified container spacing for edge-to-edge */
+  --spacing-container: 100%;
+  --spacing-container-lg: 100%;
+  
+  /* Remove default gaps */
+  --gap-x: 0;
+  --gap-y: 0;
 
   --shadow-md: 0 4px 6px -1px var(--shadow), 0 2px 4px -2px var(--shadow);
   --shadow-xl: 0 20px 25px -5px var(--shadow), 0 8px 10px -6px var(--shadow);
@@ -156,11 +178,24 @@
   --shadow: #00000008;
   --shadow-strong: #00000008;
 }
+section#features-section {
+  padding-top: 0px!important;
+}
+
+section#templates-section {
+  padding-top: 0px!important;
+}
+
+section#about-section {
+  padding-top: 0px !important;
+}
+
+
 
 .dark {
   /* Accent colors */
-  --brand: oklch(83.6% 0.1177 66.87);
-  --brand-foreground: oklch(75.77% 0.159 55.91);
+  --brand: #3813C2;
+  --brand-foreground: #3813C2;
 
   /* Customized shadcn/ui colors */
   --background: oklch(0.141 0.005 285.823);
@@ -174,42 +209,68 @@
   --secondary: oklch(0.274 0.006 286.033);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.885 0.006 286.033);
-  --input: oklch(0.274 0.006 286.033);
-  --ring: oklch(0.442 0.017 285.786);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.21 0.006 285.885);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+  --ring: oklch(0.705 0.015 286.067);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.141 0.005 285.823);
+  --sidebar-primary: oklch(0.21 0.006 285.885);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.274 0.006 286.033);
-  --sidebar-ring: oklch(0.442 0.017 285.786);
-
+  --sidebar-accent: oklch(0.967 0.001 286.375);
+  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
+  --sidebar-border: oklch(0.92 0.004 286.32);
+  --sidebar-ring: oklch(0.705 0.015 286.067);
+ 
   /* Illustrations colors */
-  --light: var(--foreground);
-  --light-foreground: var(--foreground);
+  --light: var(--brand);
+  --light-foreground: var(--brand-foreground);
 
   /* Shadows */
-  --shadow: #00000020;
-  --shadow-strong: #00000088;
+  --shadow: #00000008;
+  --shadow-strong: #00000008;
 }
 
-@layer base {
-  * {
-    @apply border-border;
+/* Banner container adjustments */
+.bannerContainer {
+  @apply w-full p-0 m-0 overflow-hidden;
+  background: linear-gradient(90deg, #f8f9fa, #e9ecef);
+}
+
+.scrollingText {
+  @apply py-4; /* Vertical padding only */
+  display: inline-block;
+  animation: scroll 20s linear infinite;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  padding-right: 20px;
+}
+
+.scrollingText:hover {
+  animation-play-state: paused;
+  cursor: default;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .scrollingText {
+    font-size: 1.2rem;
+    @apply py-3; /* Adjusted vertical padding for mobile */
   }
-  body {
-    @apply bg-background text-foreground;
-  }
+  
 }

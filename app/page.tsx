@@ -1,25 +1,40 @@
-import Navbar from "../components/sections/navbar/default";
 import Hero from "../components/sections/hero/default";
-import Stats from "../components/sections/stats/default";
-import Logos from "../components/sections/logos/default";
-import Items from "../components/sections/items/default";
-import FAQ from "../components/sections/faq/default";
-import CTA from "../components/sections/cta/default";
-import Footer from "../components/sections/footer/default";
-import Pricing from "../components/sections/pricing/default";
+import Footer from "../components/footer/default";
+import Navigation from "@/components/ui/navigation";
+import Features from "@/components/sections/logos/default";
+import {ImageGenLogo} from "@/components/logos/image-gen-logo";
+import {About} from "@/components/about/default";
+import {Templates} from "@/components/templates/default";
+import InfiniteScrollBanner from "@/components/animation/default";
+import ImageGallery from "@/components/ui/images/ImageGallery ";
 
-export default function Home() {
+
+// Your Home component is now a Server Component (async)
+export default async function Home() {
+  // If you need to fetch any data, you can do it here
+  // Example: 
+  // const res = await fetch('https://api.example.com/something');
+  // const data = await res.json();
+
+  
   return (
     <main className="min-h-screen w-full overflow-hidden bg-background text-foreground">
-      <Navbar />
+      <header className="relative flex items-center h-16 px-4">
+        <div className="absolute left-4">
+          <ImageGenLogo />
+        </div>
+        <div className="mx-auto">
+          <Navigation />
+        </div>
+      </header>
       <Hero />
-      <Logos />
-      <Items />
-      <Stats />
-      <Pricing />
-      <FAQ />
-      <CTA />
-      <Footer />
+      <ImageGallery/>
+      <Features id="features-section" />
+      <InfiniteScrollBanner />
+      <Templates id="templates-section" />
+      <About id="about-section" />
+      <Footer/>
     </main>
   );
 }
+

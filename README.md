@@ -1,4 +1,4 @@
-# 🚀 Launch UI – Next.js Website Components Template
+# 🚀 Alrais AI Image Generation – Next.js Website Components Template
 
 A comprehensive collection of production-ready website components built with Next.js, Shadcn/ui, and Tailwind CSS. Perfect for developers looking to quickly build modern, responsive websites with the power of shadcn/ui components.
 
@@ -7,11 +7,11 @@ A comprehensive collection of production-ready website components built with Nex
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
 [![shadcn/ui](https://img.shields.io/badge/shadcn/ui-latest-black)](https://ui.shadcn.com/)
 
-<img src="https://launchuicomponents.com/preview.gif" alt="Launch UI components mockups" />
+<img src="https://launchuicomponents.com/preview.gif" alt="Alrais AI Image Generation components mockups" />
 
 > [!TIP]
 > **Tailwind v4 + React 19:**
-> Launch UI v2.0 adds full support for Tailwind v4, React 19 and Next.js 15.
+> Alrais AI Image Generation v2.0 adds full support for Tailwind v4, React 19 and Next.js 15.
 > If you're using Tailwind 3, a version that supports it is still maintained on a [separate branch](https://github.com/launch-ui/launch-ui/tree/tailwind-3).
 
 ## 🚀 Quick Start
@@ -30,8 +30,8 @@ npm run dev
 
 ## 📚 Resources
 
-- [Live Preview](https://launchuicomponents.com/preview)
-- [Documentation](https://www.launchuicomponents.com/docs/getting-started/introduction)
+<!-- - [Live Preview](https://launchuicomponents.com/preview) -->
+- [Documentation](https://www.)
 
 ## ✨ Features
 
@@ -55,7 +55,7 @@ npm run dev
 - **CTA**: Powerful call-to-action component with multiple styles including box layouts and beam effects. Designed to create compelling sections that drive user engagement
 - **Footer**: Versatile footer with multiple layout variants including default, minimal, and multi-column styles. Perfect for organizing site information and links
 
-### In [Pro version](https://launchuicomponents.com/pricing)
+<!-- ### In [Pro version](https://launchuicomponents.com/pricing) -->
 
 - **Bento Grid**: Advanced masonry-style grid system for creating visually appealing content arrangements. Perfect for showcasing features, products, or content in an elegant, card-based layout
 - **Feature**: Sophisticated feature showcase with flexible illustration placements and mockup displays. Includes multiple layout options while maintaining shadcn's consistent design language
@@ -75,7 +75,7 @@ npm run dev
 
 ## 💡 Use Cases
 
-Launch UI was made for products that need a great-looking, conversion-optimized landing page that speaks to proffessional quality-oriented audiences.
+Alrais AI Image Generation was made for products that need a great-looking, conversion-optimized landing page that speaks to proffessional quality-oriented audiences.
 
 Perfect for building landing pages for:
 
@@ -92,8 +92,8 @@ This repository is licensed under the [MIT License](https://github.com/launch-ui
 
 ---
 
-<p align="center">
+<!-- <p align="center">
   <a href="https://launchuicomponents.com">Website</a> •
   <a href="https://launchuicomponents.com/docs">Documentation</a> •
   <a href="https://launchuicomponents.com/preview">Preview</a>
-</p>
+</p> -->
